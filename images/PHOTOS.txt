@@ -1,0 +1,11 @@
+Add your photos to this folder using these exact filenames:
+
+  bg.jpg       - Login page background (romantic photo of you two)
+  month-1.jpg  - Photo from Month 1 together
+  month-2.jpg  - Photo from Month 2 together
+  month-4.jpg  - Photo from Month 4 together
+  month-6.jpg  - Photo from Month 6 together
+  month-12.jpg - Photo from your 1-Year Anniversary
+
+JPG, PNG, and WEBP all work — just rename the file to match exactly.
+If a photo is missing, a beautiful placeholder will show instead.

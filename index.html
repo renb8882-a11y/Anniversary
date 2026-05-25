@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Story</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== LOGIN PAGE ===== -->
+  <div id="page-login" class="page active">
+    <div class="login-bg">
+      <div class="login-overlay"></div>
+    </div>
+    <header class="login-header">
+      <div class="brand-logo">
+        <span class="brand-heart">♥</span>
+        <span class="brand-text">OurStory</span>
+      </div>
+    </header>
+    <main class="login-main">
+      <div class="login-box">
+        <h1>Sign In</h1>
+        <form id="login-form" novalidate>
+          <div class="form-group">
+            <input type="text" id="login-name" placeholder=" " autocomplete="off" />
+            <label for="login-name">Your Name</label>
+          </div>
+          <div class="form-group">
+            <input type="password" id="login-password" placeholder=" " autocomplete="off" />
+            <label for="login-password">Our Anniversary Date</label>
+            <span class="password-hint">Hint: the date we started ♥</span>
+          </div>
+          <div id="login-error" class="login-error hidden">Incorrect password. Try again.</div>
+          <button type="submit" class="btn-signin">Sign In</button>
+        </form>
+      </div>
+    </main>
+    <div class="login-gradient-bottom"></div>
+  </div>
+
+  <!-- ===== WHO'S WATCHING PAGE ===== -->
+  <div id="page-profiles" class="page hidden">
+    <header class="profiles-header">
+      <div class="brand-logo">
+        <span class="brand-heart">♥</span>
+        <span class="brand-text">OurStory</span>
+      </div>
+    </header>
+    <main class="profiles-main">
+      <h1 class="profiles-title">Who's watching?</h1>
+      <div class="profiles-grid" id="profiles-grid">
+
+        <!-- Month 1 -->
+        <div class="profile-card" data-month="1" data-label="Month 1">
+          <div class="profile-avatar">
+            <img src="images/month-1.jpg" alt="Month 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+            <div class="avatar-placeholder">
+              <span class="placeholder-month">1</span>
+              <span class="placeholder-heart">♥</span>
+            </div>
+          </div>
+          <p class="profile-name">Month 1</p>
+        </div>
+
+        <!-- Month 2 -->
+        <div class="profile-card" data-month="2" data-label="Month 2">
+          <div class="profile-avatar">
+            <img src="images/month-2.jpg" alt="Month 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+            <div class="avatar-placeholder">
+              <span class="placeholder-month">2</span>
+              <span class="placeholder-heart">♥</span>
+            </div>
+          </div>
+          <p class="profile-name">Month 2</p>
+        </div>
+
+        <!-- Month 4 -->
+        <div class="profile-card" data-month="4" data-label="Month 4">
+          <div class="profile-avatar">
+            <img src="images/month-4.jpg" alt="Month 4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+            <div class="avatar-placeholder">
+              <span class="placeholder-month">4</span>
+              <span class="placeholder-heart">♥</span>
+            </div>
+          </div>
+          <p class="profile-name">Month 4</p>
+        </div>
+
+        <!-- Month 6 -->
+        <div class="profile-card" data-month="6" data-label="Month 6">
+          <div class="profile-avatar">
+            <img src="images/month-6.jpg" alt="Month 6" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+            <div class="avatar-placeholder">
+              <span class="placeholder-month">6</span>
+              <span class="placeholder-heart">♥</span>
+            </div>
+          </div>
+          <p class="profile-name">Month 6</p>
+        </div>
+
+        <!-- Month 12 -->
+        <div class="profile-card" data-month="12" data-label="Month 12">
+          <div class="profile-avatar">
+            <img src="images/month-12.jpg" alt="Month 12" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
+            <div class="avatar-placeholder">
+              <span class="placeholder-month">12</span>
+              <span class="placeholder-heart">♥</span>
+            </div>
+          </div>
+          <p class="profile-name">1 Year ♥</p>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- ===== MEMORY PAGE ===== -->
+  <div id="page-memory" class="page hidden">
+    <header class="memory-header">
+      <button class="btn-back" id="btn-back">&#8592; Back</button>
+      <div class="brand-logo">
+        <span class="brand-heart">♥</span>
+        <span class="brand-text">OurStory</span>
+      </div>
+    </header>
+    <main class="memory-main">
+      <div class="memory-hero">
+        <img id="memory-hero-img" src="" alt="" />
+        <div class="memory-hero-overlay">
+          <div class="memory-badge" id="memory-badge">Month 1</div>
+          <h1 class="memory-title" id="memory-title">Our First Month</h1>
+          <p class="memory-subtitle" id="memory-subtitle">August 21, 2025</p>
+        </div>
+      </div>
+      <div class="memory-content">
+        <p class="memory-message" id="memory-message"></p>
+      </div>
+      <div class="memory-nav">
+        <button class="btn-prev-month" id="btn-prev-month">&#8592; Previous</button>
+        <button class="btn-next-month" id="btn-next-month">Next &#8594;</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
