@@ -454,7 +454,7 @@
             <span class="password-hint">Hint: the date we started &#9829;</span>
           </div>
           <div id="login-error" class="login-error hidden">Incorrect password. Try again.</div>
-          <button type="button" id="btn-signin" class="btn-signin">Sign In</button>
+          <button type="button" id="btn-signin" class="btn-signin" onclick="doLogin()">Sign In</button>
         </form>
       </div>
     </main>
@@ -596,7 +596,7 @@
     }
 
     // LOGIN
-    document.getElementById('btn-signin').addEventListener('click', function() {
+    function doLogin() {
       var raw = document.getElementById('login-password').value.trim();
       var normalized = raw.replace(/[-\/\s]/g, '');
       if (normalized === '821' || normalized === '0821') {
@@ -607,11 +607,12 @@
         document.getElementById('login-password').value = '';
         document.getElementById('login-password').focus();
       }
-    });
+    }
 
-    // also allow Enter key in password field
+    document.getElementById('btn-signin').addEventListener('click', doLogin);
+
     document.getElementById('login-password').addEventListener('keydown', function(e) {
-      if (e.key === 'Enter') document.getElementById('btn-signin').click();
+      if (e.key === 'Enter') doLogin();
     });
 
     // PROFILE SELECTION
