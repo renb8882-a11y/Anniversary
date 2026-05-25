@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Story</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="memory-page">
+  <header class="memory-header">
+    <a href="profiles.html" class="btn-back">&#8592; Back</a>
+  </header>
+  <main class="memory-main">
+    <div class="memory-hero" id="memory-hero">
+      <img id="memory-img" src="" alt="" />
+      <div class="memory-hero-overlay">
+        <div class="memory-badge" id="memory-badge"></div>
+        <h1 class="memory-title" id="memory-title"></h1>
+        <p class="memory-subtitle" id="memory-subtitle"></p>
+      </div>
+    </div>
+    <div class="memory-content">
+      <p class="memory-message" id="memory-message"></p>
+    </div>
+    <div class="memory-nav">
+      <a id="btn-prev" class="btn-nav" href="#">&#8592; Previous</a>
+      <a id="btn-next" class="btn-nav" href="#">Next &#8594;</a>
+    </div>
+  </main>
+  <script>
+    var MONTHS = [
+      { m:1,  img:'images/month-1.jpg',  badge:'Month 1',  title:'Our First Month',       date:'August 21, 2025',   msg:'Every love story has a beginning, and ours started here.\n\nThis was the month everything changed. The butterflies, the late-night texts, the smiles that would not quit. I did not know then how special this would become, but I felt it.\n\nThank you for making day one unforgettable. ♥' },
+      { m:2,  img:'images/month-2.jpg',  badge:'Month 2',  title:'Two Months In',          date:'October 21, 2025',  msg:'Two months felt like a lifetime and a moment all at once.\n\nWe were still figuring each other out, your quirks, my habits, the little things that make you, you. And I loved every discovery.\n\nBy now I knew this was something real. ♥' },
+      { m:4,  img:'images/month-4.jpg',  badge:'Month 4',  title:'Four Months Together',   date:'December 21, 2025', msg:'Four months in and you already felt like home.\n\nWe had gotten through busy weeks, lazy weekends, and everything in between. The comfort we found in each other, that is rare.\n\nI would not trade a single moment. ♥' },
+      { m:6,  img:'images/month-6.jpg',  badge:'Month 6',  title:'Six Months Strong',      date:'February 21, 2026', msg:'Half a year. Can you believe it?\n\nSix months of laughing at our own inside jokes, of growing side by side, of choosing each other every single day. That is what love is, a choice made over and over.\n\nI would choose you a thousand times more. ♥' },
+      { m:12, img:'images/month-12.jpg', badge:'1 Year ♥', title:'One Full Year',      date:'August 21, 2026',   msg:'A whole year. 365 days. And somehow it still does not feel like enough.\n\nThis year you showed me what it means to be loved, really loved. Through everything we have been through, you have been my constant, my favorite person, my home.\n\nHappy anniversary, baby. Here is to forever. ♥' }
+    ];
+
+    var params = new URLSearchParams(window.location.search);
+    var m = parseInt(params.get('m')) || 1;
+    var idx = 0;
+    for (var i = 0; i < MONTHS.length; i++) { if (MONTHS[i].m === m) { idx = i; break; } }
+
+    function load(index) {
+      var d = MONTHS[index];
+      var img = document.getElementById('memory-img');
+      var hero = document.getElementById('memory-hero');
+      img.onerror = function() { img.style.display='none'; hero.style.background='linear-gradient(135deg,#3a0a0a,#8b1a1a)'; };
+      img.onload  = function() { img.style.display='block'; hero.style.background=''; };
+      img.src = d.img;
+      document.getElementById('memory-badge').textContent   = d.badge;
+      document.getElementById('memory-title').textContent   = d.title;
+      document.getElementById('memory-subtitle').textContent = d.date;
+      document.getElementById('memory-message').textContent  = d.msg;
+      var prev = document.getElementById('btn-prev');
+      var next = document.getElementById('btn-next');
+      if (index === 0) { prev.style.opacity='0.3'; prev.removeAttribute('href'); } else { prev.style.opacity='1'; prev.href='month.html?m='+MONTHS[index-1].m; }
+      if (index === MONTHS.length-1) { next.style.opacity='0.3'; next.removeAttribute('href'); } else { next.style.opacity='1'; next.href='month.html?m='+MONTHS[index+1].m; }
+    }
+
+    load(idx);
+  </script>
+</body>
+</html>
